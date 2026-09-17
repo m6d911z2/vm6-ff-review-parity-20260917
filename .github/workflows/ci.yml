@@ -7,4 +7,9 @@ jobs:
   ff-ci:
     runs-on: ubuntu-latest
     steps:
+      - name: Hold synthetic fast-forward check window
+        if: startsWith(github.event.pull_request.title, 'merge queue:')
+        run: |
+          echo 'VM6_FF_SYNTHETIC_HOLD=120'
+          sleep 120
       - run: echo 'VM6_FF_CI=success'
