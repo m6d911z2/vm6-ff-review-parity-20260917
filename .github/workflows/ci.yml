@@ -1,0 +1,10 @@
+name: CI
+on:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  ff-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'VM6_FF_CI=success'
