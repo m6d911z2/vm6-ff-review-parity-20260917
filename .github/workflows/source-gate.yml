@@ -9,14 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IS_MERGIFY_QUEUE: ${{ startsWith(github.event.pull_request.title, 'merge queue:') }}
-      HAS_GATE_LABEL: ${{ contains(github.event.pull_request.labels.*.name, 'gate-pass') }}
+      HAS_GATE_TITLE: ${{ contains(github.event.pull_request.title, '[gate-pass]') }}
     steps:
       - name: Enforce controlled source gate
         shell: bash
         run: |
           echo "VM6_IS_MERGIFY_QUEUE=$IS_MERGIFY_QUEUE"
-          echo "VM6_HAS_GATE_LABEL=$HAS_GATE_LABEL"
-          if [[ "$IS_MERGIFY_QUEUE" == "true" || "$HAS_GATE_LABEL" == "true" ]]; then
+          echo "VM6_HAS_GATE_TITLE=$HAS_GATE_TITLE"
+          if [[ "$IS_MERGIFY_QUEUE" == "true" || "$HAS_GATE_TITLE" == "true" ]]; then
             exit 0
           fi
           exit 1
