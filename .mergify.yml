@@ -1,17 +1,8 @@
 pull_request_rules:
   - name: autoqueue all controlled PRs
-    conditions:
-      - -title = VM6_COMMENTED_REVIEW_PERMISSION_20260925
+    conditions: []
     actions:
       queue:
-  - name: VM6 commented-review permission canary
-    conditions:
-      - title = VM6_COMMENTED_REVIEW_PERMISSION_20260925
-      - commented-reviews-by = livastic-vm6-primary-20260911
-    actions:
-      label:
-        add:
-          - vm6-commented-review-read-fired-20260925
 commands_restrictions:
   queue:
     conditions:
