@@ -12,9 +12,4 @@ jobs:
         run: |
           echo 'VM6_FF_SYNTHETIC_HOLD=120'
           sleep 120
-      - name: Hold controlled workflow freshness A/B window
-        if: startsWith(github.event.pull_request.title, 'VM6_WORKFLOW_TOCTOU_261009')
-        run: |
-          echo 'VM6_WORKFLOW_TOCTOU_HOLD=90'
-          sleep 90
       - run: echo 'VM6_FF_CI=success'

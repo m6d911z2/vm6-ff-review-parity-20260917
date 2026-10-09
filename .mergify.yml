@@ -19,15 +19,12 @@ scopes:
       - barrier/**
 
 queue_rules:
-  - name: vm6-workflow-toctou-261009
+  - name: vm6-directmerge-261007
     batch_size: 1
     queue_conditions:
-      - base = main
-      - title ~= ^VM6_WORKFLOW_TOCTOU_261009
-      - -files ~= ^\.github/workflows/
-      - check-success = @github-actions/ff-ci
-    merge_conditions: []
+      - title ~= ^VM6_DIRECTMERGE_
+    merge_conditions:
+      - check-success = @github-actions/compat-ci
     max_checks_retries: 0
     merge_method: merge
-    update_method: merge
     checks_timeout: null
