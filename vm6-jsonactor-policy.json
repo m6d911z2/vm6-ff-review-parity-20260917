@@ -1,0 +1,13 @@
+{
+  "rules": [
+    {
+      "principal": "trusted-deployer-service",
+
+      "role": "admin",
+      "resource": "production-deploy",
+
+      "enabled": false
+    }
+  ],
+  "benign": "baseline"
+}
