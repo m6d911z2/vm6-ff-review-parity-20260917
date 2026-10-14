@@ -1,0 +1,1 @@
+VM6 fork-only namesake check, never intended for merge
